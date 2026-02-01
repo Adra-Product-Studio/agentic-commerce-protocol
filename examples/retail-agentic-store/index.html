@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Retail | Agentic Commerce Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Nova Retail</p>
+        <h1>Agentic Commerce Storefront</h1>
+        <p class="subhead">
+          Explore products, chat with the retail agent, and watch ACP checkout payloads update in real time.
+        </p>
+      </div>
+      <div class="header-actions">
+        <button class="secondary" id="resetSession">Reset session</button>
+        <button class="primary" id="startCheckout">Start checkout</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="catalog">
+        <div class="section-header">
+          <h2>Catalog (20 items)</h2>
+          <p>Ask the agent for recommendations, sizing, or bundles. Try: “Build me a weekend travel kit.”</p>
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+
+      <section class="sidebar">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Live cart</h2>
+            <span id="cartCount" class="badge">0 items</span>
+          </div>
+          <div id="cartItems" class="cart-items"></div>
+          <div class="cart-summary" id="cartSummary"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Agent chat</h2>
+            <span class="badge">ACP assistant</span>
+          </div>
+          <div id="chatLog" class="chat-log"></div>
+          <form id="chatForm" class="chat-form">
+            <input
+              type="text"
+              id="chatInput"
+              placeholder="Ask for a product, apply a promo, or say 'checkout'."
+              autocomplete="off"
+            />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>ACP payload preview</h2>
+            <span class="badge">JSON</span>
+          </div>
+          <pre id="acpPayload" class="payload"></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Demo experience only. No real payments are processed. ACP payloads follow the
+        <a href="https://agenticcommerce.dev" target="_blank" rel="noreferrer">Agentic Commerce Protocol</a> spec.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
